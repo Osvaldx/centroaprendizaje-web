@@ -1,0 +1,36 @@
+@media (max-width: 640px) {
+  .menu-container {
+    transition: all 0.4s ease-in-out;
+    transform-origin: top;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .menu-container > div {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .menu-hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    padding: 0 !important;
+  }
+
+  .menu-visible {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 400px;
+    transition: all 0.4s ease-in-out;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 641px) {
+  .menu-container {
+    display: none !important;
+  }
+}
