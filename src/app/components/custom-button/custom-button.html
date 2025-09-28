@@ -1,1 +1,17 @@
-<p>custom-button works!</p>
+@if (href?.trim()) {
+    <a 
+        [href]="href" 
+        target="_blank" 
+        rel="noopener" 
+        [classList]="getStyles() + ' inline-flex items-center justify-center no-underline'">
+        {{ content }}
+    </a>
+} @else {
+    <button
+        [classList]="getStyles()"
+        [type]="type" 
+        [disabled]="disabled" 
+        [name]="name" 
+        [value]="value">{{content}}
+    </button>
+}
