@@ -1,0 +1,94 @@
+<section id="materias" class="py-10">
+    <div class="flex flex-col justify-center items-center gap-5">
+      <h3 class="text-4xl capitalize font-bold text-gray-800">nuestros servicios</h3>
+      <p class="text-center">
+        En Centro de Aprendizaje ofrecemos un acompañamiento integral para todas las etapas
+        educativas.
+      </p>
+    </div>
+    <div class="flex justify-center py-10">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl w-full items-stretch px-4"
+      >
+        <app-service-card
+          icon="📘"
+          title="Clases de apoyo"
+          content="Clases de apoyo personalizadas desde nivel primario hasta universitario."
+          [dataList]="[
+            'Las clases son personalizadas y se organizan según el programa y los materiales del estudiante.',
+            'Trabajamos sobre los contenidos de la materia que estás cursando, utilizando tus libros y apuntes.',
+            'Técnicas de estudio para superar las dificultades de lectocomprensión',
+            'Resolución rápida de consultas puntuales'
+          ]"
+          colorCard="border-t-blue-700"
+          colorIcon="bg-blue-200"
+        >
+        </app-service-card>
+        <app-service-card
+          icon="👥"
+          title="Modalidad"
+          content="Ofrecemos clases individuales o grupales, según las necesidades de cada estudiante."
+          [dataList]="[
+            'Clases individuales: atención personalizada y enfoque en tus propios objetivos.',
+            'Clases grupales: podés compartir la clase con tus compañeros o amigos, para aprender juntos.',
+            'No se conforman grupos con personas desconocidas.',
+            'Flexibilidad horaria: adaptamos los horarios a tu disponibilidad.'
+            ]"
+          colorCard="border-t-blue-700"
+          colorIcon="bg-blue-200"
+          >
+        </app-service-card>
+        <app-service-card
+          icon="🌍"
+          title="Presencial y virtual"
+          content="Clases presenciales en Avellaneda y clases virtuales para todo el país con la misma calidad educativa."
+          [dataList]="[
+            'Acceso en todo el país: podés tomar clases desde cualquier provincia con la misma atención personalizada.',
+            'Misma calidad educativa: los docentes garantizan el mismo nivel de acompañamiento tanto presencial como online.',
+            'Soporte constante: seguimiento y comunicación fluida por WhatsApp.'
+            ]"
+          colorCard="border-t-green-700"
+          colorIcon="bg-green-200"
+          >>
+        </app-service-card>
+        <app-service-card
+          icon="🧠"
+          title="Psicopedagogía"
+          content="Acompañamos los procesos de aprendizaje desde una mirada integral."
+          [dataList]="[
+            'Orientación personalizada',
+            'Evaluación de aprendizajes'
+          ]"
+          colorCard="border-t-red-700"
+          colorIcon="bg-red-200"
+          >>
+        </app-service-card>
+        <app-service-card
+          icon="📝"
+          title="Asesoramiento académico"
+          content="Ayuda en monografías y trabajos prácticos."
+          [dataList]="[
+            'Organización del trabajo',
+            'Corrección y redacción',
+            'Presentación profesional'
+          ]"
+          colorCard="border-t-yellow-500"
+          colorIcon="bg-yellow-200"
+          >>
+        </app-service-card>
+        <app-service-card
+          icon="📩"
+          title="Feedback constante"
+          content="Los padres reciben información periódica sobre el avance de sus hijos."
+          [dataList]="[
+            'Informes regulares',
+            'Ejercicios después de cada clase'
+          ]"
+          colorCard="border-t-violet-700"
+          colorIcon="bg-violet-200"
+        >
+        </app-service-card>
+      </div>
+    </div>
+  </section>
+  
