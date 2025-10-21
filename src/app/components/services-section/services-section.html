@@ -1,10 +1,20 @@
 <section id="materias" class="py-10">
-    <div class="flex flex-col justify-center items-center gap-5">
+    <div class="relative flex flex-col justify-center items-center gap-4 max-w-5xl mx-auto">
+      <span class="bg-orange-400 rotate-2 animate-float animate-iteration-count-infinite text-white text-sm font-bold px-3 py-1 rounded-full w-fit select-none"
+      [hidden]="!this.showPromo()"
+      >
+        🎉 Promociones del 1 al 10!!
+      </span>
       <h3 class="text-4xl capitalize font-bold text-gray-800">nuestros servicios</h3>
       <p class="text-center">
         En Centro de Aprendizaje ofrecemos un acompañamiento integral para todas las etapas
         educativas.
       </p>
+      <span class="bg-orange-400 text-white px-2 py-1 rounded-2xl font-bold select-none"
+      [hidden]="!this.showPromo()"
+      >
+        🪄 15% OFF
+      </span>
     </div>
     <div class="flex justify-center py-10">
       <div
