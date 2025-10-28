@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, effect, signal } from '@angular/core';
+import { Component, OnDestroy, signal } from '@angular/core';
 
 @Component({
   selector: 'app-galery-section',
