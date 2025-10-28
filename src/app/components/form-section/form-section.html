@@ -1,0 +1,126 @@
+<section id="contacto" class="bg-[#dcebd4] py-16 p-10 max-sm:m-0 max-sm:px-0">
+    <div class="flex flex-col justify-center items-center gap-5 text-center px-4">
+        <span class="bg-green-200 text-center px-3 py-2 rounded-2xl text-green-800 uppercase font-bold">
+            Contáctanos
+        </span>
+        <h3 class="text-4xl capitalize font-bold text-gray-800">¡Envíanos tu consulta!</h3>
+        <p class="max-w-xl text-black/80">Te responderemos a la brevedad 😊</p>
+    </div>
+
+    <form [formGroup]="ContactForm" class="max-w-2xl mx-auto mt-10 px-4">
+        <div class="space-y-5">
+            <div class="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-200 border-t-4 border-t-green-600">
+                <label for="email" class="flex items-center gap-2 mb-2 text-green-700">
+                    <p>📧</p>
+                    <span class="font-bold">Email</span>
+                </label>
+                <input type="email" name="email" id="email" formControlName="email" autocomplete="email"
+                    placeholder="Ejemplo: ricardo@gmail.com"
+                    class="w-full text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-0 bg-transparent" />
+            </div>
+            <div class="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-200 border-t-4 border-t-green-600">
+                <label for="subject" class="flex items-center gap-2 mb-2 text-green-700">
+                    <p>📋</p>
+                    <span class="font-bold">Asunto</span>
+                </label>
+                <input type="text" name="subject" id="subject" formControlName="subject" autocomplete="off"
+                    placeholder="Ejemplo: Consulta sobre disponibilidad horaria..."
+                    class="w-full text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-0 bg-transparent" />
+            </div>
+            <div class="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-200 border-t-4 border-t-green-600">
+                <label for="message" class="flex items-center gap-2 mb-2 text-green-700">
+                    <p>📜</p>
+                    <span class="font-bold">Mensaje</span>
+                </label>
+                <textarea id="message" name="message" formControlName="message" placeholder="Buenas tardes, quería consultar sobre..."
+                    rows="6"
+                    class="w-full text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-0 bg-transparent resize-none"></textarea>
+            </div>
+            <button type="submit" (click)="onSubmit()" [disabled]="ContactForm.invalid || isLoading()"
+                class="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-colors duration-200 relative">
+                <span>
+                    @if (!isLoading()) {
+                        Enviar Consulta
+                    } @else {
+                        Enviando...
+                    }
+                </span>
+            </button>
+        </div>
+        <div class="pt-5">
+            <p class="text-center text-sm font-bold">Si querés enviarnos un correo más personalizado</p>
+            <p class="text-center text-sm font-semibold">consultas@centroaprendizaje.com.ar</p>
+        </div>
+    </form>
+
+    @if (showSuccessModal()) {
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 transition-opacity"
+        (click)="closeModal()">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
+                (click)="$event.stopPropagation()">
+                <div class="px-8 py-6 border-b border-gray-200 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">¡Mensaje Enviado!</h3>
+                    </div>
+                    <button (click)="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="px-8 py-6">
+                    <p class="text-gray-700 mb-4">
+                        Tu consulta ha sido enviada exitosamente. Te responderemos en breve.
+                    </p>
+                    <button (click)="closeModal()"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-2xl transition-colors">
+                        Entendido
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Modal de Error -->
+    @if (showErrorModal()) {
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 transition-opacity"
+        (click)="closeModal()">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
+                (click)="$event.stopPropagation()">
+                <div class="px-8 py-6 border-b border-gray-200 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Error al Enviar</h3>
+                    </div>
+                    <button (click)="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="px-8 py-6">
+                    <p class="text-gray-700 mb-4">
+                        Oops, hubo un problema al enviar tu consulta. Por favor, intenta nuevamente más tarde.
+                    </p>
+                    <button (click)="closeModal()"
+                        class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-2xl transition-colors">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</section>
