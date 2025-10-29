@@ -9,11 +9,11 @@ import { Component, OnDestroy, signal } from '@angular/core';
 export class GalerySection implements OnDestroy {
 
   images = signal([
-    'assets/clasemejorada.png',
-    'assets/clase2mejorada.png',
-    'assets/fondoo.png',
-    'assets/clase2aula.png',
-    'assets/frenteok.png',
+    'assets/clasemejorada.webp',
+    'assets/clase2mejorada.webp',
+    'assets/fondoo.webp',
+    'assets/clase2aula.webp',
+    'assets/frenteok.webp',
   ]);
 
   currentIndex = signal(0);
