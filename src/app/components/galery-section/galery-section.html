@@ -81,13 +81,15 @@
           
           <!-- Círculos indicadores -->
           @for (img of images(); track $index) {
-            <button
-              (click)="goToImage($index)"
-              class="w-4 h-4 rounded-full transition-all duration-300 hover:scale-125"
-              [class.bg-gray-700]="currentIndex() === $index"
-              [class.bg-gray-400]="currentIndex() !== $index"
-              [class.shadow-lg]="currentIndex() === $index"
-            ></button>
+            @if ($index <= 5) {
+              <button
+                (click)="goToImage($index)"
+                class="w-4 h-4 rounded-full transition-all duration-300 hover:scale-125"
+                [class.bg-gray-700]="currentIndex() === $index"
+                [class.bg-gray-400]="currentIndex() !== $index"
+                [class.shadow-lg]="currentIndex() === $index"
+              ></button>
+            }
           }
           
           <!-- Botón siguiente -->
