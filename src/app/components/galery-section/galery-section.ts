@@ -26,7 +26,6 @@ export class GalerySection implements OnDestroy {
     'assets/15.webp',
     'assets/16.webp',
     'assets/17.webp',
-    'assets/clasemejorada.webp',
     'assets/clase2mejorada.webp',
     'assets/fondoo.webp',
     'assets/clase2aula.webp',
