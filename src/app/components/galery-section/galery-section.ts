@@ -9,11 +9,6 @@ import { Component, OnDestroy, signal } from '@angular/core';
 export class GalerySection implements OnDestroy {
 
   images = signal([
-    'assets/clasemejorada.webp',
-    'assets/clase2mejorada.webp',
-    'assets/fondoo.webp',
-    'assets/clase2aula.webp',
-    'assets/frenteok.webp',
     'assets/1.webp',
     'assets/2.webp',
     'assets/3.webp',
@@ -24,7 +19,18 @@ export class GalerySection implements OnDestroy {
     'assets/8.webp',
     'assets/9.webp',
     'assets/10.webp',
-    'assets/11.webp'
+    'assets/11.webp',
+    'assets/12.webp',
+    'assets/13.webp',
+    'assets/14.webp',
+    'assets/15.webp',
+    'assets/16.webp',
+    'assets/17.webp',
+    'assets/clasemejorada.webp',
+    'assets/clase2mejorada.webp',
+    'assets/fondoo.webp',
+    'assets/clase2aula.webp',
+    'assets/frenteok.webp'
   ]);
 
   currentIndex = signal(0);
