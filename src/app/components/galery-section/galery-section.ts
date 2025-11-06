@@ -14,12 +14,7 @@ export class GalerySection implements OnDestroy {
     'assets/3.webp',
     'assets/4.webp',
     'assets/5.webp',
-    'assets/6.webp',
-    'assets/7.webp',
-    'assets/8.webp',
-    'assets/9.webp',
-    'assets/10.webp',
-    'assets/11.webp',
+    'assets/frenteok.webp',
     'assets/12.webp',
     'assets/13.webp',
     'assets/14.webp',
@@ -28,8 +23,12 @@ export class GalerySection implements OnDestroy {
     'assets/17.webp',
     'assets/clase2mejorada.webp',
     'assets/fondoo.webp',
-    'assets/clase2aula.webp',
-    'assets/frenteok.webp'
+    'assets/7.webp',
+    'assets/8.webp',
+    'assets/9.webp',
+    'assets/10.webp',
+    'assets/11.webp',
+    'assets/6.webp'
   ]);
 
   currentIndex = signal(0);
