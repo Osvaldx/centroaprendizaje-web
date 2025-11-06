@@ -32,6 +32,7 @@
     "@angular/router": "^20.3.5",
     "@angular/ssr": "^20.3.5",
     "@midudev/tailwind-animations": "^0.2.0",
+    "@omnedia/ngx-marquee": "^3.1.0",
     "@tailwindcss/postcss": "^4.1.13",
     "express": "^5.1.0",
     "postcss": "^8.5.6",
