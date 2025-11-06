@@ -6,101 +6,12 @@
           Una mirada al interior de nuestro instituto y al trabajo que realizamos junto a nuestros alumnos.
         </p>
       </div>
-      <!-- Carrusel con efecto de profundidad -->
-      <div class="relative w-full max-w-6xl mx-auto select-none overflow-hidden">
-        
-        <!-- Contenedor principal del carrusel -->
-        <div class="flex items-center justify-center relative h-[550px]">
-          
-          <!-- Imagen anterior (lado izquierdo) -->
-          <div 
-            class="absolute left-0 transform z-10 transition-all duration-700 ease-in-out max-sm:hidden"
-            style="transform: scale(0.75);"
-          >
-            <div class="relative group">
-              <div class="overflow-hidden rounded-xl border-2 border-white/40 shadow-lg bg-white/30 backdrop-blur-sm w-[320px] flex justify-center items-center opacity-70 max-[1080px]:hidden">
-                <img
-                  [src]="getVisibleImages().prev"
-                  alt="Imagen anterior"
-                  class="w-full h-full object-contain transition-all duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <button
-                (click)="prevImage()"
-                class="absolute inset-0 w-full h-full bg-transparent hover:bg-black/10 rounded-xl transition-all duration-300"
-                title="Imagen anterior"
-              ></button>
-            </div>
+      <om-marquee [animationDuration]="'80s'" [pauseOnHover]="false" [marqueeGap]="'2rem'" [scrollable]="true">
+        <ng-template *ngFor="let img of images" [omMarqueeItem]="img">
+          <div class="flex justify-center items-center w-[330px] h-full">
+            <img [src]="img" class="rounded-lg object-contain" />
           </div>
-
-          <!-- Imagen actual (centro) -->
-          <div class="relative z-10 transition-all duration-700 ease-in-out transform scale-100">
-            <div class="overflow-hidden rounded-2xl border-4 border-white shadow-2xl bg-white w-[400px] max-sm:w-[400px] flex justify-center items-center">
-              <img
-                [src]="getVisibleImages().current"
-                alt="Foto del centro"
-                class="w-full h-full object-contain transition-all duration-500"
-                loading="eager"
-              />
-            </div>
-          </div>
-
-          <!-- Imagen siguiente (lado derecho) -->
-          <div 
-            class="absolute right-0 transform z-10 transition-all duration-700 ease-in-out max-sm:hidden max-[1080px]:hidden"
-            style="transform: scale(0.75);"
-          >
-            <div class="relative group">
-              <div class="overflow-hidden rounded-xl border-2 border-white/40 shadow-lg bg-white/30 backdrop-blur-sm w-[320px] flex justify-center items-center opacity-70">
-                <img
-                  [src]="getVisibleImages().next"
-                  alt="Imagen siguiente"
-                  class="w-full h-full object-contain transition-all duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <button
-                (click)="nextImage()"
-                class="absolute inset-0 w-full h-full bg-transparent hover:bg-black/10 rounded-xl transition-all duration-300"
-                title="Imagen siguiente"
-              ></button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Indicadores de puntos con botones de navegación -->
-        <div class="flex justify-center items-center mt-6 gap-3">
-          <!-- Botón anterior -->
-          <button
-            (click)="prevImage()"
-            class="bg-gray-700 hover:bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
-          >
-            ‹
-          </button>
-          
-          <!-- Círculos indicadores -->
-          @for (img of images(); track $index) {
-            @if ($index <= 5) {
-              <button
-                (click)="goToImage($index)"
-                class="w-4 h-4 rounded-full transition-all duration-300 hover:scale-125"
-                [class.bg-gray-700]="currentIndex() === $index"
-                [class.bg-gray-400]="currentIndex() !== $index"
-                [class.shadow-lg]="currentIndex() === $index"
-              ></button>
-            }
-          }
-          
-          <!-- Botón siguiente -->
-          <button
-            (click)="nextImage()"
-            class="bg-gray-700 hover:bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
-          >
-            ›
-          </button>
-        </div>
-      </div>
+        </ng-template>
+      </om-marquee>
     </div>
-  </section>
-  
+</section>
